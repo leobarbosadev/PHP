@@ -29,7 +29,7 @@
         <label for="">Digite sua mensagem:</label><br>
 
         <!-- Campo de texto onde o usuário digita-->
-        <input type="text" name="mensagem" id="msg" required>
+        <input type="text" name="mensagem" id="msg"  placeholder='Olá, Mundo!' required>
 
         <!-- Botão para enviar-->
         <button type="submit">Enviar</button>
