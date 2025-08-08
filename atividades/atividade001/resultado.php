@@ -18,6 +18,11 @@
                     $opcao = htmlspecialchars($_POST['operadores']);
                     $num1 = htmlspecialchars($_POST['numero1']);
                     $num2 = htmlspecialchars($_POST['numero2']);
+
+                if($opcao !== '' && $num1 == '' || $num2 == ''){
+                    echo 'Preencha os 2 campos com números';
+                }
+                else{
                     if (isset($opcao) && isset($num1) && isset($num2)){
                         switch ($opcao){
                             case 'soma': // Pega o value da option do meu formulario
@@ -43,12 +48,14 @@
                                 }
                                 break;
                             default:
-                                echo 'Nenhum campo selecionado';
+                                echo 'Nenhum operação selecionado';
                                 break;
                         };
                     }else{
                         echo 'NÃO EXECUTA';
                     }
+                }
+
                 }
             ?>
         </p>
