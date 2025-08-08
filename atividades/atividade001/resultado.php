@@ -19,7 +19,7 @@
                     $num1 = htmlspecialchars($_POST['numero1']);
                     $num2 = htmlspecialchars($_POST['numero2']);
 
-                if($opcao !== '' && $num1 == '' || $num2 == ''){
+                if($opcao !== '' && ($num1 == '' || $num2 == '')){
                     echo 'Preencha os 2 campos com números';
                 }
                 else{
@@ -48,7 +48,7 @@
                                 }
                                 break;
                             default:
-                                echo 'Nenhum operação selecionado';
+                                echo 'Nenhum operação selecionada';
                                 break;
                         };
                     }else{
