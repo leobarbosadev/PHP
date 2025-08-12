@@ -15,19 +15,25 @@
             <form action="" method="post">
                 <label for="nome">Digite um numero:</label>
                 <input id="nome" name="nome_aluno" type="text" placeholder="Ex.: Antônio Gonçalves">
+
+                <label for="nota1">Entre com a 1ª nota:</label>
+                <input id="nota1" name="n1" type="number" placeholder="Ex.: 5">
+
+                <label for="nota2">Entre com a 2ª nota:</label>
+                <input id="nota2" name="n2" type="number" placeholder="Ex.: 5">
+
+                <label for="nota3">Entre com a 3ª nota:</label>
+                <input id="nota3" name="n3" type="number" placeholder="Ex.: 5">
+                
+                <label for="nota4">Entre com a 4ª nota:</label>
+                <input id="nota4" name="n4" type="number" placeholder="Ex.: 5">
+
                 <button type="submit">Calcular</button>
             </form>
 
             <p>
                 <?php
                     include "public/processa.php";
-                    $numero = htmlspecialchars($_POST['num'] ?? 0);
-
-                    if($numero){
-                        calcular($numero);
-                    } else{
-                        echo "Digite um número";
-                    }
                 ?>
             </p>
         </section>
