@@ -11,9 +11,26 @@
     </header>
 
     <main>
-        <div>
-            
-        </div>
+        <section>
+            <form action="" method="post">
+                <label for="numero">Digite um numero:</label>
+                <input id="numero" name="num" type="number" placeholder="Ex.: 1, 2, 3">
+                <button type="submit">Calcular</button>
+            </form>
+
+            <p>
+                <?php
+                    include "public/processa.php";
+                    $numero = htmlspecialchars($_POST['num'] ?? 0);
+
+                    if($numero){
+                        calcular($numero);
+                    } else{
+                        echo "Digite um número";
+                    }
+                ?>
+            </p>
+        </section>
     </main>
 
     
