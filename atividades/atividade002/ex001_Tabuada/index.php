@@ -12,7 +12,7 @@
 
     <main>
         <section>
-            <form action="" method="post">
+            <form action="" method="POST">
                 <label for="numero">Digite um numero:</label>
                 <input id="numero" name="num" type="number" placeholder="Ex.: 1, 2, 3">
                 <button type="submit">Calcular</button>
@@ -21,12 +21,15 @@
             <p>
                 <?php
                     include "public/processa.php";
-                    $numero = htmlspecialchars($_POST['num'] ?? 0);
-
-                    if($numero){
+                    //Verifica se o campo 'numero' foi enviado através do formulário
+                    if(isset($_POST['num'])){
+                        
+                        //A função htmspecialchars impede que o usuário envie códigos perigosos (como scripts)
+                        // $_POST['num'] é o valor enviado pelo formulário com método POST
+                        $numero = htmlspecialchars($_POST['num']);
                         calcular($numero);
-                    } else{
-                        echo "Digite um número";
+                    }else{
+                        echo "Digite um número para exibir sua tabuada";
                     }
                 ?>
             </p>

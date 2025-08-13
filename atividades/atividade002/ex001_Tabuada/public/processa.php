@@ -3,7 +3,7 @@
         $saida = '';
         for($i = 0; $i<= 10; $i++){
             $soma = $numero + $i;
-            echo "$i + $numero = $soma<br>";
+            echo "$numero + $i = $soma<br>";
         }
         return $saida;
     }
