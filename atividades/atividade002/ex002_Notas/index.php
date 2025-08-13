@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabuada</title>
+    <title>Calcular média</title>
 </head>
 <body>
     <header>
-        <h1>Tabuada</h1>
+        <h1>Calcular média</h1>
     </header>
 
     <main>
@@ -30,10 +30,19 @@
 
                 <button type="submit">Calcular</button>
             </form>
+            <table>
+                <theader>
+                        <th>nome</th>
+                        <th>media</th>
+                        <th>situação</th>
+                </theader>
+            </table>
 
             <p>
                 <?php
                     include "public/processa.php";
+
+                    adicionarAlunos("Joao", 10, 10, 10, 10);
                 ?>
             </p>
         </section>
