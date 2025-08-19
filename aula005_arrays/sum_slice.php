@@ -34,7 +34,7 @@ foreach($alunos as $aluno){
 
     //Exibe os dados do aluno
     echo '<h3>Aluno:</h3>';
-    print_r "Notas: " . implode(', ', $notas) . "<br>"; //junta as notas em uma string separadas por vírgula
+    echo "Notas: " . implode(', ', $notas) . "<br>"; //junta as notas em uma string separadas por vírgula
     echo '</pre>';
 
     //Exibe a média com 2 casas decimais, vírgula como separdor decimal e ponto como separador de milhar
