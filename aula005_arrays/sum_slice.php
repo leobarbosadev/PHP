@@ -3,14 +3,14 @@ echo '<h2>Dois alunos com 4 notas</h2>';
 
 $alunos = [
     [
-    'aluno' => 'Maria',
+    'nome' => 'Maria',
     'Nota1' => 10,
     'Nota2' => 9,
     'Nota3' => 8,
     'Nota4' => 10,
     ],
     [
-    'aluno' => 'João',
+    'nome' => 'João',
     'Nota1' => 7,
     'Nota2' => 8,
     'Nota3' => 6,
