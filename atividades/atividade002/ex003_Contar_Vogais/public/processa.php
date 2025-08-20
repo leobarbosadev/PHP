@@ -4,27 +4,29 @@
         $qtd_vogais = 0;
         
         //percorre todos os caracteres únicos da string
+        echo "em $minuscula temos: <br>";
         foreach (count_chars($minuscula, 1) as $i => $numero){
+
             if(chr($i) =='a'){
-                $qtd_vogais +=$numero;
+                echo 'a vogal "'.chr($i) . '" ' . $numero . ' vez(es)<br>';
             }
 
             if(chr($i) =='e'){
-                $qtd_vogais +=$numero;
+                echo 'a vogal "'.chr($i) . '" ' . $numero . ' vez(es)<br>';
             }
 
             if(chr($i) =='i'){
-                $qtd_vogais +=$numero;
+                echo 'a vogal "'.chr($i) . '" ' . $numero . ' vez(es)<br>';
             }
 
             if(chr($i) =='o'){
-                $qtd_vogais +=$numero;
+                echo 'a vogal "'.chr($i) . '" ' . $numero . ' vez(es)<br>';
             }
 
             if(chr($i) =='u'){
-                $qtd_vogais +=$numero;
+                echo 'a vogal "'.chr($i) . '" ' . $numero . ' vez(es)<br>';
             }
         }
-        echo "No texto $minuscula, tem $qtd_vogais vogal(is)";
+        echo "Digite outro texto para ver quantas vogais tem";
     }
 ?>
