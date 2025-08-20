@@ -25,7 +25,7 @@
     <!-- Formulário que envia os dados para esta mesma página via metodo POST-->
      <form method='POST'>
         <label for="nome_aluno">Nome do Aluno:</label><br>
-        <input type="text" name='nome' id='nome_aluno' required>
+        <input type="text" name='nome' id='nome_aluno' required><br>
 
         <label for="n1">Nota 1:</label><br>
         <input type="number" name="nota1" id="n1" step='0.01' required><br>
@@ -46,8 +46,36 @@
      if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $aluno = [
-            
-        ]
+            'nome' =>$_POST['nome'],
+            'Nota1' =>$_POST['nota1'],
+            'Nota2' =>$_POST['nota2'],
+            'Nota3' =>$_POST['nota3'],
+            'Nota4' =>$_POST['nota4'],
+        ];
+        echo '<hr>';
+
+        echo '<h2>Resultado: </h2>';
+
+        echo '<h3>Aluno: ' . htmlspecialchars($aluno['nome']) . '</h3>';
+
+        $soma_notas = 0;
+        $qtd_notas = 0;
+
+        foreach($aluno as $chave => $valor){
+            if($chave !== 'nome' && is_numeric($valor)){
+                echo "$chave: $valor<br>";
+
+                $soma_notas += $valor;
+
+                $qtd_notas++;
+            }
+        }
+
+        $media = $soma_notas / $qtd_notas;
+
+        echo "<br><strong>Soma das Notas:</strong> $soma_notas<br>";
+
+        echo "<strong>Média:</strong> " . number_format($media, 2, ',', '.');
      }
      ?>
 </body>
