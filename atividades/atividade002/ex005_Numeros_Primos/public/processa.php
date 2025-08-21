@@ -7,8 +7,8 @@ O programa deve perguntar se o usuário deseja gerar novamente ou sair. -->
 
 <?php
     function gerarPrimos($numero){
+        $divisores = 0;
         for($num = 1; $num <= $numero; $num++){
-            $divisores = 0;
             for($i = 1; $i <= $numero; $i++){
             if($numero % $i == 0){
                 $divisores++;
@@ -23,3 +23,11 @@ O programa deve perguntar se o usuário deseja gerar novamente ou sair. -->
         }
     }
 ?>
+
+
+<!-- function gerarPrimos($numero){
+$primos = [];
+
+for ($num = 2; $num <= $numero; $num++) { $divisores=0; for ($i=1; $i <=$num; $i++) { if ($num % $i==0) { $divisores++;
+    } } if ($divisores==2) { $primos[]=$num; } } echo "Números primos até <strong>$numero:</strong> " . implode(", ", $primos);
+    } -->
