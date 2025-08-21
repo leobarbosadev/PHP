@@ -7,27 +7,17 @@ O programa deve perguntar se o usuário deseja gerar novamente ou sair. -->
 
 <?php
     function gerarPrimos($numero){
-        $divisores = 0;
+        echo "Entre <strong>1</strong> e <strong>$numero</strong>, temos os seguintes números primos: ";
         for($num = 1; $num <= $numero; $num++){
-            for($i = 1; $i <= $numero; $i++){
-            if($numero % $i == 0){
-                $divisores++;
+            $divisores = 0;
+            for($i = 1; $i <= $num; $i++){
+                if($num % $i == 0){
+                    $divisores++; 
+                }               
             }
-        }   
-        }
-        if($divisores == 2){
-            echo "É primo";
-            
-        }else{
-            echo "Não é primo";
+            if($divisores == 2){
+                echo "<strong>$num" . ",</strong> " ;
+            }
         }
     }
 ?>
-
-
-<!-- function gerarPrimos($numero){
-$primos = [];
-
-for ($num = 2; $num <= $numero; $num++) { $divisores=0; for ($i=1; $i <=$num; $i++) { if ($num % $i==0) { $divisores++;
-    } } if ($divisores==2) { $primos[]=$num; } } echo "Números primos até <strong>$numero:</strong> " . implode(", ", $primos);
-    } -->
