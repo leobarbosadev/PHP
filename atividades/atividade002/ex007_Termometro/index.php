@@ -16,13 +16,14 @@
         <section>
             <form action="" method="POST">
                 <label for="temperatura">Digite uma temperatura:</label>
-                <input id="temperatura" name="temp" type="number" placeholder="Ex.: 15">
+                <input id="id_temp" name="numero" type="number" step = 0.1 placeholder="Ex.: 15">
 
-                <label for="">Escolha para qual temperatura quer converter:</label>
+                <!-- <label for="">Escolha para qual temperatura quer converter:</label> -->
             <select name="temperatura" id="temp">
                 <option value="selecionar">--Selecione--</option>
                 <option value="c">Celsius</option>
                 <option value="f">Fahrenheit</option>
+                <option value="k">Kelvin</option>
             </select>
                 <button type="submit">Converter</button>
             </form>
@@ -31,12 +32,15 @@
                 <?php
                     include "public/processa.php";
                     //Verifica se o campo 'temp' foi enviado através do formulário
-                    if isset($_POST['temp']){
-                        
+                    if(isset($_POST['numero']) && isset($_POST['temperatura'])){
+                        $numero = htmlspecialchars($_POST['numero']);
+                        $temperatura = htmlspecialchars($_POST['temperatura']);
                         //A função htmspecialchars impede que o usuário envie códigos perigosos (como scripts)
                         // $_POST['num'] é o valor enviado pelo formulário com método POST
-                        $temperatura = htmlspecialchars($_POST['temp']);
-                        converterTemperatura($temperatura);
+                        
+                        if((int)$numero){
+                            converterTemperatura($numero, $temperatura);
+                        }
                     }else{
                         echo "Digite um número para mostar sua conversão";
                     }
