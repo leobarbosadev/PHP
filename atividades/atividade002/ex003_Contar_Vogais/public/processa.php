@@ -1,7 +1,6 @@
 <?php
     function contarVogais($palavra){
         $minuscula = strtolower($palavra);
-        $qtd_vogais = 0;
         
         //percorre todos os caracteres únicos da string
         echo "em $minuscula temos: <br>";
