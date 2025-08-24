@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Alunos</title>
     <style>
-        /* Define a fonte e o espaçamento do corpo da página*/
-        body{
-            font-family: Arial, sans-serif;
-            margin: 40px;
-        }
-        /*Estiliza os campos de texto e números para ficarem mais legivies */
-        input[type='text'], input[type='number']{
-            padding: 8px;
-            margin: 5px 0;
-            width: 100%;
-            max-width: 300px; /* Limita o tamanho do campo */
-        }
+    /* Define a fonte e o espaçamento do corpo da página*/
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+    }
+
+    /*Estiliza os campos de texto e números para ficarem mais legivies */
+    input[type='text'],
+    input[type='number'] {
+        padding: 8px;
+        margin: 5px 0;
+        width: 100%;
+        max-width: 300px;
+        /* Limita o tamanho do campo */
+    }
     </style>
 </head>
+
 <body>
     <h1>Cadastro de Alunos</h1>
 
     <!-- Formulário que envia os dados para esta mesma página via metodo POST-->
-     <form method='POST'>
+    <form method='POST'>
         <label for="nome_aluno">Nome do Aluno:</label><br>
         <input type="text" name='nome' id='nome_aluno' required><br>
 
@@ -40,17 +45,17 @@
         <input type="number" name="nota4" id="n4" step='0.01' required><br>
 
         <input type="submit" value="Cadastrar">
-     </form>
+    </form>
 
-     <?php
+    <?php
      if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
         $aluno = [
             'nome' =>$_POST['nome'],
-            'Nota1' =>$_POST['nota1'],
-            'Nota2' =>$_POST['nota2'],
-            'Nota3' =>$_POST['nota3'],
-            'Nota4' =>$_POST['nota4'],
+            'Nota1' =>(float)$_POST['nota1'],
+            'Nota2' =>(float)$_POST['nota2'],
+            'Nota3' =>(float)$_POST['nota3'],
+            'Nota4' =>(float)$_POST['nota4'],
         ];
         echo '<hr>';
 
@@ -79,4 +84,5 @@
      }
      ?>
 </body>
+
 </html>
