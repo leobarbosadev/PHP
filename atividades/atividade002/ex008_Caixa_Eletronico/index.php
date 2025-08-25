@@ -10,27 +10,29 @@ Permita vários saques até o usuário encerrar o programa. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco</title>
+    <link rel="stylesheet" href="public/css/estilo.css">
 </head>
 <body>
-    <h1>Banco - Sacar</h1>
+    <h1>Banco</h1>
 
-    <form method='POST'>
-        <label for="valor">Digite o valor que deseja sacar</label>
-        <input type="number" name="dinheiro" id="valor">
-        <button type="submit">Sacar</button>
-    </form>
-
-    <p>
-        <?php
-            include "public/processa.php";
-            if(isset($_POST['dinheiro'])){
-                $dinheiro = htmlspecialchars($_POST['dinheiro']);
-                sacar($dinheiro);
-            }else{
-                echo "Digite um valor para sacar";
-            }
-        ?>
-    </p>
+    <section class='secao'>
+        <form method='POST'>
+            <label for="valor">Digite o valor que deseja sacar</label>
+            <input type="number" name="dinheiro" id="valor">
+            <button type="submit">Sacar</button>
+        </form>
+        <p class='resultado'>
+            <?php
+                include "public/processa.php";
+                if(isset($_POST['dinheiro'])){
+                    $dinheiro = htmlspecialchars($_POST['dinheiro']);
+                    sacar($dinheiro);
+                }else{
+                    echo "Digite um valor para sacar";
+                }
+            ?>
+        </p>
+    </section>
     
 </body>
 </html>
