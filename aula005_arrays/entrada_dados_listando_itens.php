@@ -42,8 +42,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !isset($_POST['limpar'])){
         margin: 40px;
     }
 
-    input[type="text"],
-    input[type="number"] {
+    input[type="text"], input[type="number"] {
         padding: 8px;
         margin: 5px 0;
         width: 100%;
