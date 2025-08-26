@@ -1,6 +1,7 @@
 <?php
     function sacar($valor){
-        $resto = 0;
+
+        $resto = $valor;
         if($valor >= 100){
             $numeroCelulas = intdiv($valor, 100);
             $resto = $valor % 100;
@@ -25,8 +26,12 @@
             $numeroCelulas = intdiv($resto, 5);
             $resto = $resto % 5;
             echo "Foi sacado $numeroCelulas cédula(s) de R$5,00<br>";
-        }else{
-            echo "Não tem cédulas sulficientes!!!";
+        }
+        
+        if($resto == 0){
+            echo "<br>Você sacou todo o valor";
+        } else{
+            echo "Não foi possível sacar o valor total de R$" . number_format($valor, 2, ',', '.') . ",<br>restou sacar o valor de R$" . number_format($resto, 2, ',', '.');
         }
     }
 ?>
